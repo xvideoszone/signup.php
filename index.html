@@ -3,26 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="3;url=#">
+    <title>Loading...</title>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Enkripsi sederhana menggunakan Base64 untuk menyembunyikan link Adsterra
             var encodedURL = "aHR0cHM6Ly9saXN0ZW5lcmhvb3Rlci5jb20vc25wN2E1MnJxP2tleT1iMDkxNTgwZTkwOGMyYThiN2ZkMDkzZjIzYzQ3MDUwMg==";
             var decodedURL = atob(encodedURL);
-            
-            // Redirect setelah 3 detik
+
             setTimeout(function () {
                 window.location.href = decodedURL;
             }, 3000);
         });
     </script>
+    <style>
+        /* Animasi Loading */
+        body {
+            background-color: #ffffff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #loading {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #ccc;
+            border-top-color: #000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-    <h2>Redirecting, please wait...</h2>
-    <p>If you are not redirected, <a id="redirectLink" href="#">click here</a>.</p>
-    <script>
-        document.getElementById("redirectLink").href = atob("aHR0cHM6Ly9saXN0ZW5lcmhvb3Rlci5jb20vc25wN2E1MnJxP2tleT1iMDkxNTgwZTkwOGMyYThiN2ZkMDkzZjIzYzQ3MDUwMg==");
-    </script>
+    <div id="loading"></div>
 </body>
 </html>
